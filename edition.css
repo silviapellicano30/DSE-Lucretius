@@ -1,0 +1,44 @@
+:root { --ink:#302820; --paper:#f1e2bc; --accent:#7c332a; --panel:#241e1a; }
+* { box-sizing:border-box; }
+body { margin:0; padding-bottom:27vh; color:var(--ink); background:#272521;
+  font:16px/1.65 Georgia, serif; }
+
+.masthead { padding:2.5rem 5vw; color:#f7ebcb; background:#302a24; }
+.masthead h1 { margin:.15rem 0; }
+.tools button { margin-right:.5rem; color:inherit; background:transparent;
+  border:1px solid #ccb77d; border-radius:.25rem; padding:.35rem .7rem; }
+
+main { padding:2rem 5vw; }
+.reading-desk { display:grid; grid-template-columns:1fr; gap:1.5rem; max-width:1300px; margin:auto; }
+.reading-desk:has(.translation:not([hidden])) { grid-template-columns:1fr 1fr; }
+
+.parchment { padding:clamp(1.5rem,5vw,4rem); background:var(--paper);
+  box-shadow:0 8px 30px #0005; border:1px solid #dfc58e; }
+.verse { display:grid; grid-template-columns:3rem 1fr; margin:.25rem 0; }
+.line-number { color:#8b7257; font-size:.8rem; text-align:right; padding-right:1.2rem; }
+.app-marker { color:var(--accent); vertical-align:super; font-size:.65em;
+  background:transparent; border:0; font-weight:bold; cursor:pointer; }
+
+.lemmas .word { cursor:help; text-decoration:underline dotted #8b7257;
+  text-underline-offset:.15em; }
+
+.apparatus { position:fixed; z-index:5; bottom:0; inset-inline:0; height:26vh;
+  min-height:11rem; color:#f4e9cd; background:var(--panel);
+  border-top:3px solid var(--accent); transition:height .25s; }
+.apparatus.expanded { height:66vh; }
+.apparatus-bar { height:3rem; display:flex; justify-content:space-between;
+  padding:.45rem 1rem; border-bottom:1px solid #65574d; }
+.apparatus button { color:inherit; background:transparent; border:0; cursor:pointer; }
+.apparatus [aria-selected="true"] { border-bottom:2px solid #e1b66a; }
+.app-panel { height:calc(100% - 3rem); overflow:auto; padding:.5rem 1.5rem; }
+.app-entry, .linked-entry { border-bottom:1px solid #4d423a; }
+.app-entry.active { outline:2px solid #d4a54a; outline-offset:3px; }
+.linked-entry a { color:#e1b66a; }
+
+#lemma-popover { position:fixed; z-index:10; padding:.35rem .55rem;
+  background:#171412; color:#fff5dc; border-radius:.25rem; font-style:italic; }
+
+@media (max-width:720px) {
+  .reading-desk:has(.translation:not([hidden])) { grid-template-columns:1fr; }
+  .apparatus { height:32vh; }
+}
