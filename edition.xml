@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+    href="https://vault.tei-c.org/P5/current/xml/tei/custom/schema/relaxng/tei_all.rng"
+    schematypens="http://relaxng.org/ns/structure/1.0"
+    type="application/xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader xml:lang="en">
+    <fileDesc>
+      <titleStmt>
+        <title type="main">De rerum natura, Liber III: Prooemium (III 1 – 93)</title>
+        <author><persName ref="#TLC">Titus Lucretius Carus</persName></author>
+      </titleStmt>
+      <editionStmt>
+        <edition n="1">Digital scholarly edition, version 1.0 (2026)</edition>
+        <respStmt>
+          <resp>Annotated by</resp>
+          <persName ref="#SAP">
+            <forename>Silvia Antonella</forename>
+            <surname>Pellicano</surname>
+          </persName>
+        </respStmt>
+      </editionStmt>
+      <publicationStmt>
+        <publisher>
+          <foreign xml:lang="la">Alma Mater Studiorum</foreign> - <foreign xml:lang="it">Università di Bologna</foreign>
+        </publisher>
+        <pubPlace>
+          <placeName key="Bologna" sameAs="https://www.geonames.org/3181928">Bologna</placeName>
+          <date when="2026-09">September, 2026</date>
+        </pubPlace>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC</licence>
+          <p>Open Access. Available for academic purposes.</p>
+        </availability>
+      </publicationStmt>
+      <notesStmt>
+        <note>Prototype digital scholarly edition of Lucretius, <title level="m">De rerum natura</title> 3.1–93. XML/TEI encoding produced for the course examination in Digital Scholarly Editing: Theory, Methods, and Practice.</note>
+      </notesStmt>
+      <sourceDesc>
+        <bibl type="printed_source" xml:id="Deufert2019">
+          <title level="m">De rerum natura libri VI</title>
+          <author ref="#TLC">Titus Lucretius Carus</author>
+          <editor>Marcus Deufert</editor>
+          <series>Bibliotheca scriptorum Graecorum et Romanorum Teubneriana</series>
+          <pubPlace>Berlin</pubPlace>
+          <pubPlace>Boston</pubPlace>
+          <publisher>Walter de Gruyter</publisher>
+          <date when="2019">2019</date>
+          <idno type="ISBN">978-3-11-026251-3</idno>
+        </bibl>
+        <listWit>
+          <!-- CAROLINGIAN WITNESSES -->
+          <witness xml:id="Omega">
+            <abbr>Ω</abbr>
+            <desc>Archetypus deperditus (Praef. § 3, 11–12).</desc>
+          </witness>
+          <witness xml:id="O">
+            <abbr>O</abbr>
+            <desc>Codex Oblongus, Leiden, Universitaire Bibliotheken, Voss. Lat. F 30, saec. IX in. (Praef. § 4).</desc>
+          </witness>
+          <witness xml:id="Gamma">
+            <abbr>Γ</abbr>
+            <desc>Subarchetypus deperditus familiae alterae carolingicae, reconstructus ex Q, G, V, U (Praef. § 3, 6–11).</desc>
+          </witness>
+          <witness xml:id="Q">
+            <abbr>Q</abbr>
+            <desc>Codex Quadratus, Leiden, Universitaire Bibliotheken, Voss. Lat. Q 94, saec. IX med. (Praef. § 6).</desc>
+          </witness>
+          <witness xml:id="G">
+            <abbr>G</abbr>
+            <desc>Schedae Gottorpienses, Hauniae GKS 211 2°, saec. IX ex. (Praef. § 8).</desc>
+          </witness>
+          <witness xml:id="V">
+            <abbr>V</abbr>
+            <desc>Schedae Vindobonenses priores, ÖNB Cod. Lat. 107, fols. 9–14, saec. IX ex. (Praef. § 8).</desc>
+          </witness>
+          <witness xml:id="U">
+            <abbr>U</abbr>
+            <desc>Schedae Vindobonenses posteriores, ÖNB Cod. Lat. 107, fols. 15–18, saec. IX ex. (Praef. § 8).</desc>
+          </witness>
+
+          <!-- HANDS AND CORRECTORS -->
+          <witness xml:id="O1">
+            <abbr>O1</abbr>
+            <desc>Prima manus codicis Oblongi (Praef. § 5).</desc>
+          </witness>
+          <witness xml:id="OD">
+            <abbr>OD</abbr>
+            <desc>Dungalus monachus Hibernicus, corrector Oblongi aequalis (Praef. § 5).</desc>
+          </witness>
+          <witness xml:id="O2">
+            <abbr>O2</abbr>
+            <desc>Correctores codicis Oblongi fere aequales vel paulo recentiores (Praef. § 5).</desc>
+          </witness>
+          <witness xml:id="O3">
+            <abbr>O3</abbr>
+            <desc>Corrector codicis Oblongi saec. X ex. vel XI in. (Praef. § 5).</desc>
+          </witness>
+          <witness xml:id="Q1">
+            <abbr>Q1</abbr>
+            <desc>Prima manus codicis Quadrati (Praef. § 7).</desc>
+          </witness>
+          <witness xml:id="Qa">
+            <abbr>Qa</abbr>
+            <desc>Corrector antiquior Quadrati (librarius ipse aut eius aequalis) (Praef. § 7, 14).</desc>
+          </witness>
+          <witness xml:id="Q2">
+            <abbr>Q2</abbr>
+            <desc>Corrector Quadrati saeculi XV medii Italus doctus (Praef. § 7).</desc>
+          </witness>
+
+          <!-- ITALIAN / HUMANISTIC TRADITION -->
+          <witness xml:id="xi">
+            <abbr>ξ</abbr>
+            <desc>Apographum Poggianum coniecturis doctorum Italorum (Poggii, Nicoli etc.) auctum (Praef. § 20).</desc>
+          </witness>
+          <witness xml:id="mu">
+            <abbr>μ</abbr>
+            <desc>Vetustissimum apographon deperditum ex ξ derivatum (Praef. § 17, 22).</desc>
+          </witness>
+          <witness xml:id="alpha">
+            <abbr>α</abbr>
+            <desc>Testis deperditus ex μ derivatus, forsan Antonio Panormitae tribuendus (Praef. § 17, 24–25).</desc>
+          </witness>
+          <witness xml:id="alphaStar">
+            <abbr>α*</abbr>
+            <desc>Consensus testium A2, R, B familiae α (Praef. § 25).</desc>
+          </witness>
+          <witness xml:id="alpha-A">
+            <abbr>α-A</abbr>
+            <desc>Consensus testium R et B familiae α, excluso codice A (Praef. § 25).</desc>
+          </witness>
+          <witness xml:id="phi">
+            <abbr>φ</abbr>
+            <desc>Familia coniecturalis Romana Laurentio Vallae adscripta (Praef. § 24, 26).</desc>
+          </witness>
+          <witness xml:id="phiStar">
+            <abbr>φ*</abbr>
+            <desc>Consensus codicum F, C, e, f cum codice o emendato (Praef. § 26).</desc>
+          </witness>
+          <witness xml:id="N">
+            <abbr>N</abbr>
+            <desc>Codex Neapolitanus bibl. nat. IV E 51, a Pomponio Laeto correctus (Praef. § 26, 29).</desc>
+          </witness>
+          <witness xml:id="N2">
+            <abbr>N2</abbr>
+            <desc>Manus correctrix Pomponii Laeti in codice N (Praef. § 29).</desc>
+          </witness>
+          <witness xml:id="s">
+            <abbr>s</abbr>
+            <desc>Codex Ambrosianus E 125 sup. (Praef. § 29).</desc>
+          </witness>
+          <witness xml:id="s2">
+            <abbr>s2</abbr>
+            <desc>Petrus Odus Montopolitanus, corrector codicis s (Praef. § 29).</desc>
+          </witness>
+          <witness xml:id="MarStar">
+            <abbr>Mar.*</abbr>
+            <desc>Consensus saltem duorum testium inter D2, I2, Ea, Fa, Da et editionem Iuntinam (1512), coniecturas Michaelis Marulli continens (Praef. § 33).</desc>
+          </witness>
+          <witness xml:id="L">
+            <abbr>L</abbr>
+            <desc>Laurentianus 35.30, manu Nicolai Nicoli scriptus (Praef. § 17).</desc>
+          </witness>
+          <witness xml:id="Aa">
+            <abbr>Aa</abbr>
+            <desc>Vaticanus Reg. Lat. 1706 (Praef. § 17).</desc>
+          </witness>
+          <witness xml:id="o">
+            <abbr>o</abbr>
+            <desc>Vaticanus Patetta 312 (Praef. § 17).</desc>
+          </witness>
+          <witness xml:id="x">
+            <abbr>x</abbr>
+            <desc>Caesenas Bibl. Malatest. S 20.4 (Praef. § 17).</desc>
+          </witness>
+          <witness xml:id="Ja">
+            <abbr>Ja</abbr>
+            <desc>Matritensis Bibl. Nac. 2885 (Praef. § 17).</desc>
+          </witness>
+          <witness xml:id="d">
+            <abbr>d</abbr>
+            <desc>Laurentianus Conv. Soppr. 453 (Praef. § 17).</desc>
+          </witness>
+          <witness xml:id="A">
+            <abbr>A</abbr>
+            <desc>Vaticanus Lat. 3276, a. 1442 (Praef. § 17, 25).</desc>
+          </witness>
+          <witness xml:id="B">
+            <abbr>B</abbr>
+            <desc>Vaticanus Barb. Lat. 154 (Praef. § 17, 25).</desc>
+          </witness>
+          <witness xml:id="R">
+            <abbr>R</abbr>
+            <desc>Vaticanus Ross. 502 (Praef. § 17, 25).</desc>
+          </witness>
+          <witness xml:id="F">
+            <abbr>F</abbr>
+            <desc>Laurentianus 35.31 (Praef. § 24).</desc>
+          </witness>
+          <witness xml:id="C">
+            <abbr>C</abbr>
+            <desc>Cantabrigiensis bibl. univ. Nn. 2.40 (Praef. § 24, 26).</desc>
+          </witness>
+          <witness xml:id="e">
+            <abbr>e</abbr>
+            <desc>Vaticanus Lat. 3275 (Praef. § 24).</desc>
+          </witness>
+          <witness xml:id="f">
+            <abbr>f</abbr>
+            <desc>Vaticanus Ottob. Lat. 1136 (Praef. § 24).</desc>
+          </witness>
+        </listWit>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <variantEncoding method="parallel-segmentation" location="internal"/>
+      <editorialDecl>
+        <p n="critical">The apparatus is encoded inline using the parallel segmentation method. The &lt;lem&gt; element represents the critical text (Deufert 2019), while &lt;rdg&gt; elements record manuscript readings, indirect traditions, and humanist or modern conjectures.</p>
+        <p n="fontium">The apparatus fontium is kept separate from the critical apparatus and records ancient source attestations (Aug.-saec. IX ex.) explicitly given by Deufert (Praef. §§ 40–46).</p>
+        <p n="iterati">Deufert's apparatus ad versus iteratos records internal repetitions, distinguishing exact repetitions (=) from similarities (~) (Praef. § 39).</p>
+        <p n="orthography">Orthography follows the non-normalized practice of the archetype as preserved in Deufert's text (Praef. §§ 53–55).</p>
+      </editorialDecl>
+      <projectDesc>
+        <p>Digital scholarly edition developed for the examination in Digital Scholarly Editing: Theory, Methods, and Practice.</p>
+      </projectDesc>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="la">Latin</language>
+        <language ident="en">English</language>
+        <language ident="it">Italian</language>
+      </langUsage>
+      <particDesc>
+        <listPerson type="scholars">
+          <person xml:id="TLC"><persName>Titus Lucretius Carus</persName></person>
+          <person xml:id="MD"><persName>Marcus Deufert</persName></person>
+          <person xml:id="Lact"><persName>Lactantius</persName></person>
+          <person xml:id="Non"><persName>Nonius Marcellus</persName></person>
+          <person xml:id="Wakefield"><persName>Gilbert Wakefield</persName></person>
+          <person xml:id="Timpanaro"><persName>Sebastiano Timpanaro</persName></person>
+          <person xml:id="SH"><persName>R. J. Shackle</persName></person>
+          <person xml:id="Marullus"><persName>Michael Marullus</persName></person>
+          <person xml:id="OR"><persName>Johann Caspar von Orelli</persName></person>
+          <person xml:id="LACh"><persName>Karl Lachmann</persName></person>
+          <person xml:id="Bentley"><persName>Richard Bentley</persName></person>
+        </listPerson>
+      </particDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="prooemium" n="III">
+        <head>Liber III, prooemium: III 1–93</head>
+        <argument>
+          <p>Traditio textus (vv. 1–621): Ω (= O Γ [= Q V]). The text of this section rests upon the consensus of the Carolingian archetype Ω, witnessed by O and the Γ-branch (Q and V). Critical text follows Deufert (2019).</p>
+        </argument>
+        <lg type="poem">
+          <!-- III 1 -->
+          <l xml:id="III1" n="1">
+            <app type="critical">
+              <lem wit="#Omega"><w lemma="o">O</w></lem>
+              <rdg wit="#alpha-A" type="conjecture"><w lemma="e">E</w></rdg>
+              <rdg resp="#SH" type="conjecture"><w lemma="tu">Te</w></rdg>
+              <note>O Ω, defend. Wakefield, Timpanaro (1960) : E α-A : Te Shackle (1921) 156</note>
+            </app>
+            <w lemma="tenebra">tenebris</w>
+            <w lemma="tantus">tantis</w>
+            <w lemma="tam">tam</w>
+            <w lemma="clarus">clarum</w>
+            <w lemma="extollo">extollere</w>
+            <anchor xml:id="f1_lumen"/>
+            <app type="critical">
+              <lem wit="#Gamma" source="#Lact"><w lemma="lumen">lumen</w></lem>
+              <rdg wit="#O"><w lemma="flumen">flumen</w></rdg>
+            </app>
+          </l>
+
+          <!-- III 2 -->
+          <l xml:id="III2" n="2">
+            <w lemma="qui">qui</w>
+            <w lemma="primus">primus</w>
+            <w lemma="possum">potuisti</w>
+            <w lemma="illustro">inlustrans</w>
+            <w lemma="commodum">commoda</w>
+            <app type="critical">
+              <lem wit="#O"><w lemma="vita">uitae</w></lem>
+              <rdg wit="#Gamma"><w lemma="vito">uitat</w></rdg>
+            </app>,
+          </l>
+
+          <!-- III 3 -->
+          <l xml:id="III3" n="3">
+            <w lemma="tu">te</w>
+            <w lemma="sequor">sequor</w>,
+            <w lemma="o">o</w>
+            <w lemma="Graius" ana="#key-term">Graiae</w>
+            <w lemma="gens">gentis</w>
+            <w lemma="decus">decus</w>,
+            <w lemma="in">in</w><w lemma="que">que</w>
+            <w lemma="tuus">tuis</w>
+            <w lemma="nunc">nunc</w>
+          </l>
+
+          <!-- III 4 -->
+          <l xml:id="III4" n="4">
+            <w lemma="fingo">ficta</w>
+            <w lemma="pes">pedum</w>
+            <w lemma="pono">pono</w>
+            <w lemma="premo">pressis</w>
+            <w lemma="vestigium">uestigia</w>
+            <w lemma="signum">signis</w>,
+          </l>
+
+          <!-- III 5 -->
+          <l xml:id="III5" n="5">
+            <w lemma="non">non</w>
+            <w lemma="ita">ita</w>
+            <w lemma="certo">certandi</w>
+            <w lemma="cupidus">cupidus</w>
+            <w lemma="quam">quam</w>
+            <w lemma="propter">propter</w>
+            <w lemma="amor">amorem</w>
+          </l>
+
+          <!-- III 6 -->
+          <l xml:id="III6" n="6">
+            <w lemma="quod">quod</w>
+            <w lemma="tu">te</w>
+            <w lemma="imitor">imitari</w>
+            <w lemma="aveo">aueo</w>;
+            <w lemma="quis">quid</w>
+            <w lemma="enim">enim</w>
+            <app type="critical">
+              <lem wit="#O"><w lemma="contendo">contendat</w></lem>
+              <rdg wit="#Gamma">c o n t e n d a</rdg>
+            </app>
+            <w lemma="hirundo">hirundo</w>
+          </l>
+
+          <!-- III 7 -->
+          <l xml:id="III7" n="7">
+            <app type="critical">
+              <lem wit="#N2 #s2"><w lemma="cycnus">cycnis</w></lem>
+              <rdg wit="#Q2 #alphaStar #phi"><w lemma="cycnus">cignis</w> <seg type="alt"><w lemma="cycnus">cygnis</w></seg></rdg>
+              <rdg wit="#O">cycniis</rdg>
+              <rdg wit="#V">cyiniis</rdg>
+              <rdg wit="#Q1">ciniis</rdg>
+              <note>cignis uel cygnis iam Q2 α* φ</note>
+            </app>,
+            <anchor xml:id="f7_start"/>
+            <w lemma="aut">aut</w>
+            <w lemma="quisnam">quidnam</w>
+            <anchor xml:id="r7_start"/>
+            <w lemma="tremulus">tremulis</w>
+            <w lemma="facio">facere</w>
+            <w lemma="artus">artubus</w>
+            <w lemma="haedus">haedi</w>
+          </l>
+
+          <!-- III 8 -->
+          <l xml:id="III8" n="8">
+            <app type="critical">
+              <lem wit="#Omega"><w lemma="consimilis">consimile</w></lem>
+              <rdg source="#Non"><w lemma="consimilis">consimili</w></rdg>
+              <note>consimile] consimili codd. Non. utroque loco</note>
+            </app>
+            <w lemma="in">in</w>
+            <w lemma="cursus">cursu</w>
+            <w lemma="possum">possint</w>
+            <app type="critical">
+              <lem wit="#Omega"><w lemma="et">et</w></lem>
+              <rdg source="#Non"><w lemma="atque">ac</w></rdg>
+              <note>et] ac Non. p. 420, 39</note>
+            </app>
+            <w lemma="fortis">fortis</w>
+            <w lemma="equus">equi</w>
+            <w lemma="vis">uis</w>?
+            <anchor xml:id="f7_end"/>
+          </l>
+
+          <!-- III 9 -->
+          <l xml:id="III9" n="9">
+            <w lemma="tu">tu</w>,
+            <w lemma="pater" ana="#key-term">pater</w>,
+            <w lemma="sum">es</w>
+            <w lemma="res" ana="#key-term">rerum</w>
+            <w lemma="inventor">inuentor</w>,
+            <w lemma="tu">tu</w>
+            <w lemma="patria">patria</w>
+            <w lemma="nos">nobis</w>
+          </l>
+
+          <!-- III 10 -->
+          <l xml:id="III10" n="10">
+            <w lemma="suppedito">suppeditas</w>
+            <app type="critical">
+              <lem wit="#O"><w lemma="praeceptum">praecepta</w></lem>
+              <rdg wit="#Gamma"><w lemma="praecipio">praeceptas</w></rdg>
+            </app>,
+            <w lemma="tuus">tuis</w><w lemma="que">que</w>
+            <w lemma="ex">ex</w>,
+            <w lemma="inclutus">inclute</w>,
+            <w lemma="charta">chartis</w>,
+          </l>
+
+          <!-- III 11 -->
+          <l xml:id="III11" n="11">
+            <w lemma="florifer">floriferis</w>
+            <w lemma="ut">ut</w>
+            <w lemma="apis">apes</w>
+            <w lemma="in">in</w>
+            <w lemma="saltus">saltibus</w>
+            <w lemma="omnis">omnia</w>
+            <app type="critical">
+              <lem resp="#Marullus" wit="#MarStar"><w lemma="libo">libant</w></lem>
+              <rdg wit="#Omega"><w lemma="limo">limant</w></rdg>
+              <note>libant Mar.* : limant Ω</note>
+            </app>,
+          </l>
+
+          <!-- III 12 -->
+          <l xml:id="III12" n="12">
+            <w lemma="omnis">omnia</w>
+            <w lemma="nos">nos</w>
+            <w lemma="itidem">itidem</w>
+            <w lemma="depascor">depascimur</w>
+            <w lemma="aureus">aurea</w>
+            <w lemma="dictum">dicta</w>,
+          </l>
+
+          <!-- III 13 -->
+          <l xml:id="III13" n="13">
+            <w lemma="aureus">aurea</w>,
+            <w lemma="perpetuus">perpetua</w>
+            <w lemma="semper">semper</w>
+            <w lemma="dignus">dignissima</w>
+            <w lemma="vita">uita</w>.
+          </l>
+
+          <!-- III 14 -->
+          <l xml:id="III14" n="14">
+            <w lemma="nam">nam</w>
+            <w lemma="simul">simul</w>
+            <w lemma="ac">ac</w>
+            <w lemma="ratio" ana="#key-term">ratio</w>
+            <w lemma="tuus">tua</w>
+            <w lemma="coepi">coepit</w>
+            <w lemma="vocifero">uociferari</w>
+          </l>
+
+          <!-- III 15 -->
+          <l xml:id="III15" n="15">
+            <w lemma="natura" ana="#key-term">naturam</w>
+            <w lemma="res" ana="#key-term">rerum</w>,
+            <w lemma="divinus">diuina</w>
+            <w lemma="mens">mente</w>
+            <app type="critical">
+              <lem resp="#OR"><w lemma="coorior">coorta</w></lem>
+              <rdg wit="#O"><w lemma="coorior">coortam</w></rdg>
+              <rdg wit="#Gamma"><w lemma="coarto">coartam</w></rdg>
+              <note>coorta Orellius in adnotatione</note>
+            </app>,
+          </l>
+
+          <!-- III 16 -->
+          <l xml:id="III16" n="16">
+            <w lemma="diffugio">diffugiunt</w>
+            <w lemma="animus" ana="#key-term">animi</w>
+            <w lemma="terror" ana="#key-term">terrores</w>,
+            <w lemma="moenia">moenia</w>
+            <w lemma="mundus">mundi</w>
+          </l>
+
+          <!-- III 17 -->
+          <l xml:id="III17" n="17">
+            <w lemma="discedo">discedunt</w>,
+            <anchor xml:id="f17_start"/>
+            <w lemma="totus">totum</w>
+            <w lemma="video">uideo</w>
+            <w lemma="per">per</w>
+            <w lemma="inanis">inane</w>
+            <w lemma="gero">geri</w>
+            <w lemma="res" ana="#key-term">res</w>.
+            <anchor xml:id="f17_end"/>
+          </l>
+
+          <!-- III 18 -->
+          <l xml:id="III18" n="18">
+            <w lemma="appareo">apparet</w>
+            <w lemma="divus">diuum</w>
+            <w lemma="numen">numen</w>
+            <w lemma="sedes">sedes</w><w lemma="que">que</w>
+            <w lemma="quietus">quietae</w>,
+          </l>
+
+          <!-- III 19 -->
+          <l xml:id="III19" n="19">
+            <w lemma="qui">quas</w>
+            <w lemma="neque">neque</w>
+            <w lemma="concutio">concutiunt</w>
+            <w lemma="ventus">uenti</w>
+            <w lemma="nec">nec</w>
+            <w lemma="nubilum">nubila</w>
+            <w lemma="nimbus">nimbis</w>
+          </l>
+
+          <!-- III 20 -->
+          <l xml:id="III20" n="20">
+            <w lemma="aspergo">aspergunt</w>
+            <w lemma="neque">neque</w>
+            <w lemma="nix">nix</w>
+            <w lemma="acer">acri</w>
+            <w lemma="concretus">concreta</w>
+            <w lemma="pruina">pruina</w>
+          </l>
+
+          <!-- III 21 -->
+          <l xml:id="III21" n="21">
+            <w lemma="canus">cana</w>
+            <w lemma="cado">cadens</w>
+            <w lemma="violo">uiolat</w>,
+            <app type="critical">
+              <lem wit="#phi"><w lemma="semper">semper</w><w lemma="que">que</w></lem>
+              <rdg wit="#Omega"><w lemma="semper">semper</w></rdg>
+            </app>
+            <w lemma="innubilus">innubilus</w>
+            <w lemma="aether">aether</w>
+          </l>
+
+          <!-- III 22 -->
+          <l xml:id="III22" n="22">
+            <w lemma="intego">integit</w>
+            <w lemma="et">et</w>
+            <w lemma="large">large</w>
+            <w lemma="diffundo">diffuso</w>
+            <w lemma="lumen">lumine</w>
+            <app type="critical">
+              <lem wit="#Omega"><w lemma="rideo">ridet</w></lem>
+              <rdg resp="#LACh" type="conjecture"><w lemma="rideo">rident</w></rdg>
+              <note>ridet] rident Lachmann</note>
+            </app>.
+          </l>
+        </lg>
+
+        <!-- Apparati separati, collegati al testo tramite @target e @corresp. -->
+        <div type="apparatus-fontium">
+          <head>Apparatus fontium et versuum iteratorum (III 1–22)</head>
+
+          <note type="fontium" xml:id="font-III1-lumen"
+                target="#III1 #f1_lumen" source="#Lact">
+            Cf. <bibl corresp="#Lact"><author>Lact.</author>
+            <title>inst.</title> 6, 2, 6</bibl>:
+            <quote>lumen …, ut ait poeta, ‘liquidum’ atque ‘clarum’</quote>.
+          </note>
+          <note type="fontium" xml:id="font-III7-8"
+                target="#III7 #f7_start #III8 #f7_end" source="#Non">
+            <quote>aut –</quote>
+            <bibl corresp="#Non"><author>Non.</author>
+            <title>comp.</title> p. 306, 9; p. 420, 38 Lindsay</bibl>.
+          </note>
+          <note type="fontium" xml:id="font-III17"
+                target="#III17 #f17_start #f17_end" source="#Non">
+            <quote>totum –</quote>
+            <bibl corresp="#Non"><author>Non.</author>
+            <title>comp.</title> p. 446, 5 Lindsay</bibl>.
+          </note>
+        </div>
+
+        <div type="versus-iterati">
+          <head>Apparatus versuum iteratorum</head>
+          <note type="iterati" xml:id="iter-III7"
+                target="#III7 #r7_start" corresp="#II367" subtype="similar">
+            <w lemma="tremulus">tremulis</w>: ~
+            <ref target="#II367">II 367</ref>.
+          </note>
+        </div>
+
+        <div type="translation" xml:lang="it">
+          <head>Traduzione di lavoro (III 1–22)</head>
+          <lg type="translation">
+            <l n="1" corresp="#III1">O tu che per primo, tra tenebre così fitte, levasti una luce tanto chiara, illuminando i beni della vita,</l>
+            <l n="2" corresp="#III2">tu che per primo potesti illustrare i vantaggi dell’esistenza,</l>
+            <l n="3" corresp="#III3">te seguo, o gloria della gente greca, e ora nelle tue</l>
+            <l n="4" corresp="#III4">orme impresse poso con sicurezza i miei passi,</l>
+            <l n="5" corresp="#III5">non tanto per desiderio di contendere quanto per amore,</l>
+            <l n="6" corresp="#III6">perché desidero imitarti: quale rondine potrebbe infatti competere</l>
+            <l n="7" corresp="#III7">con i cigni, o quali capretti dalle membra tremanti</l>
+            <l n="8" corresp="#III8">potrebbero eguagliare nella corsa la forza di un forte cavallo?</l>
+            <l n="9" corresp="#III9">Tu, padre, sei lo scopritore della verità; tu a noi</l>
+            <l n="10" corresp="#III10">offri precetti paterni dai tuoi illustri scritti.</l>
+            <l n="11" corresp="#III11">Come le api nei pascoli fioriti raccolgono ogni nettare,</l>
+            <l n="12" corresp="#III12">così noi ci nutriamo delle tue auree parole,</l>
+            <l n="13" corresp="#III13">auree, sempre degnissime di vita perenne.</l>
+            <l n="14" corresp="#III14">Infatti, non appena la tua dottrina cominciò a proclamare</l>
+            <l n="15" corresp="#III15">la natura delle cose, sorta da una mente divina,</l>
+            <l n="16" corresp="#III16">i terrori dell’animo si dileguano, le mura del mondo</l>
+            <l n="17" corresp="#III17">si aprono: vedo compiersi gli eventi attraverso l’immenso vuoto.</l>
+            <l n="18" corresp="#III18">Appaiono la maestà degli dei e le loro dimore serene,</l>
+            <l n="19" corresp="#III19">che i venti non scuotono e le nubi non bagnano di piogge,</l>
+            <l n="20" corresp="#III20">né violenta la neve candida, rappresa dall’aspro gelo,</l>
+            <l n="21" corresp="#III21">cade a turbarle: un etere sempre senza nubi</l>
+            <l n="22" corresp="#III22">le avvolge e ride di una luce largamente diffusa.</l>
+          </lg>
+        </div>
+
+        <div type="stemma">
+          <head>Stemma codicum (aevi Carolini et traditionis Italicae)</head>
+          <p>Stemma delineato ex Marcus Deufert (2019):</p>
+          <list>
+            <item>Ω (Archetypus saec. VIII/IX)
+              <list>
+                <item>O (Codex Oblongus, Voss. Lat. F 30, saec. IX in.) → apographon Poggianum (1417) → ξ (editio Italica vetustissima chirographis emendata) → μ, α, φ</item>
+                <item>Γ (Subarchetypus deperditus)
+                  <list>
+                    <item>Q (Codex Quadratus, Voss. Lat. Q 94, saec. IX med.)</item>
+                    <item>Codex mutilus Italiae septentrionalis (saec. IX ex.) nunc divisus in Schedis: G (Gottorpienses), V (Vindobonenses priores), U (Vindobonenses posteriores)</item>
+                  </list>
+                </item>
+              </list>
+            </item>
+          </list>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
