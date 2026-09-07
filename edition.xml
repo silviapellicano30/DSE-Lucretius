@@ -215,36 +215,102 @@
     </fileDesc>
     <encodingDesc>
       <variantEncoding method="parallel-segmentation" location="internal"/>
-      <editorialDecl>
-        <p n="critical">The apparatus is encoded inline using the parallel segmentation method. The &lt;lem&gt; element represents the critical text (Deufert 2019), while &lt;rdg&gt; elements record manuscript readings, indirect traditions, and humanist or modern conjectures.</p>
-        <p n="fontium">The apparatus fontium is kept separate from the critical apparatus and records ancient source attestations (Aug.-saec. IX ex.) explicitly given by Deufert (Praef. §§ 40–46).</p>
-        <p n="iterati">Deufert's apparatus ad versus iteratos records internal repetitions, distinguishing exact repetitions (=) from similarities (~) (Praef. § 39).</p>
-        <p n="orthography">Orthography follows the non-normalized practice of the archetype as preserved in Deufert's text (Praef. §§ 53–55).</p>
-      </editorialDecl>
       <projectDesc>
-        <p>Digital scholarly edition developed for the examination in Digital Scholarly Editing: Theory, Methods, and Practice.</p>
+        <p>Prototype of a Digital Scholarly Edition (DSE) of the proem to Book III of Lucretius' 
+        <title>De rerum natura</title>, developed for the examination in 
+        <name type="course">Digital Scholarly Editing: Theory, Methods, and Practice</name> 
+        held by Prof. <persName>Paola Italia</persName> at the <orgName>University 
+        of Bologna</orgName> for the academic year <date>2025/2026</date>, based on the critical 
+        text established by <persName>Marcus Deufert</persName>.</p>
       </projectDesc>
+      <editorialDecl>
+        <segmentation>
+          <p>The critical apparatus is encoded inline using the parallel segmentation method. The &lt;lem&gt; element represents the critical text established by Marcus Deufert (2019), while &lt;rdg&gt; elements record readings from the primary manuscript branches, the indirect tradition, and humanist or modern conjectures.</p>
+        </segmentation>
+        <interpretation>
+          <p>The apparatus fontium is kept separate from the critical apparatus and records ancient source attestations (Aug.–saec. IX ex.) as provided by Deufert (Praef. §§ 40–46).</p>
+          <p>The apparatus ad versus iteratos tracks internal formulaic recurrences across the poem, distinguishing identical repetitions (=) from verbal and thematic similarities (~) (Praef. § 39).</p>
+        </interpretation>
+        <normalization>
+         <p>Orthography follows the non-normalized practice of the archetype as preserved in Deufert's text (Praef. §§ 53–55), maintaining archaic spellings, unassimilated prefixes, and the non-distinction between vocalic and consonantal u.</p>
+        </normalization>
+      </editorialDecl>
     </encodingDesc>
     <profileDesc>
+      <textDesc>
+        <channel mode="w"/>
+        <constitution type="single"/>
+        <derivation type="original"/>
+        <domain type="literary"/>
+        <factuality type="fact"/>
+        <interaction type="none"/>
+        <preparedness type="prepared"/>
+        <purpose type="inform" degree="high"/>
+        <purpose type="entertain" degree="medium"/>
+      </textDesc>
       <langUsage>
         <language ident="la">Latin</language>
         <language ident="en">English</language>
-        <language ident="it">Italian</language>
       </langUsage>
       <particDesc>
-        <listPerson type="scholars">
-          <person xml:id="TLC"><persName>Titus Lucretius Carus</persName></person>
-          <person xml:id="MD"><persName>Marcus Deufert</persName></person>
-          <person xml:id="Lact"><persName>Lactantius</persName></person>
-          <person xml:id="Non"><persName>Nonius Marcellus</persName></person>
-          <person xml:id="Wakefield"><persName>Gilbert Wakefield</persName></person>
-          <person xml:id="Timpanaro"><persName>Sebastiano Timpanaro</persName></person>
-          <person xml:id="SH"><persName>R. J. Shackle</persName></person>
-          <person xml:id="Marullus"><persName>Michael Marullus</persName></person>
-          <person xml:id="OR"><persName>Johann Caspar von Orelli</persName></person>
-          <person xml:id="LACh"><persName>Karl Lachmann</persName></person>
-          <person xml:id="Bentley"><persName>Richard Bentley</persName></person>
+        <listPerson type="contributors">
+                    <person xml:id="SAP" source="https://github.com/silviapellicano30">
+                        <persName xml:lang="it">Silvia Antonella Pellicano</persName>
+                        <occupation>student, annotator</occupation>
+                    </person>
+                </listPerson>
+        <listPerson type="authors">
+         <person xml:id="TLC" sameAs="https://viaf.org/en/viaf/106388020"><persName xml:lang="la">Titus Lucretius Carus</persName>
+         <birth when="-0099" cert="low">ca. 99 a.C.</birth>
+         <death when="-0055" cert="low">ca. 55 a.C.</death>
+         </person>
         </listPerson>
+        <listPerson type="scholars">
+  <person xml:id="MD">
+    <persName xml:lang="de">Marcus Deufert</persName>
+    <note>German classical philologist and professor (born 1970); editor of the 2019 critical edition of Lucretius' De rerum natura.</note>
+  </person>
+  <person xml:id="Wakefield">
+    <persName xml:lang="en">Gilbert Wakefield</persName>
+    <note>English classical scholar and critic (1756–1801); editor of an influential edition of Lucretius published in London (1796–1797).</note>
+  </person>
+  <person xml:id="Timpanaro">
+    <persName xml:lang="it">Sebastiano Timpanaro</persName>
+    <note>Italian classical philologist and textual critic (1923–2000); renowned scholar of classical reception and Latin textual transmission.</note>
+  </person>
+  <person xml:id="SH">
+    <persName xml:lang="en">Richard J. Shackle</persName>
+    <note>British classical scholar (active early 20th century); author of conjectural emendations to classical Latin poets, including Lucretius (1921).</note>
+  </person>
+  <person xml:id="Marullus">
+    <persName xml:lang="it">Michele Marullo Tarcaniota</persName>
+    <persName xml:lang="la">Michael Marullus</persName>
+    <note>Greek-Italian Renaissance poet and humanist scholar (ca. 1458–1500); produced major conjectural emendations in his working copy of Lucretius.</note>
+  </person>
+  <person xml:id="OR">
+    <persName xml:lang="de">Johann Caspar von Orelli</persName>
+    <note>Swiss classical scholar and epigraphist (1787–1849); editor of Latin classical texts and philosophical treatises.</note>
+  </person>
+  <person xml:id="LACh">
+    <persName xml:lang="de">Karl Lachmann</persName>
+    <note>German classical and Germanic philologist (1793–1851); established the landmark stemmatic edition and reconstructed the archetype of Lucretius (1850).</note>
+  </person>
+  <person xml:id="Bentley">
+    <persName xml:lang="en">Richard Bentley</persName>
+    <note>English classical scholar and pioneering textual critic (1662–1742); composed marginalia and influential conjectures on the text of Lucretius.</note>
+  </person>
+</listPerson>
+
+<listPerson type="ancientSources">
+  <person xml:id="Lact">
+    <persName xml:lang="la">Lucius Caecilius Firmianus Lactantius</persName>
+    <note>Early Christian author, rhetorician, and apologist (ca. 250 – ca. 325 AD); preserves indirect quotations from Lucretius in his Divinae Institutiones.</note>
+  </person>
+  <person xml:id="Non">
+    <persName xml:lang="la">Nonius Marcellus</persName>
+    <note>Roman grammarian and lexicographer from Thubursicu (active early 4th century AD); quotes numerous poetic lines in De compendiosa doctrina.</note>
+  </person>
+</listPerson>
       </particDesc>
     </profileDesc>
   </teiHeader>
@@ -259,7 +325,7 @@
           <!-- III 1 -->
           <l xml:id="III1" n="1">
             <app type="critical">
-              <lem wit="#Omega"><w lemma="o">O</w></lem>
+              <lem wit="#Omega" resp="#Wakefield #Timpanaro"><w lemma="o">O</w></lem>
               <rdg wit="#alpha-A" type="conjecture"><w lemma="e">E</w></rdg>
               <rdg resp="#SH" type="conjecture"><w lemma="tu">Te</w></rdg>
               <note>O Ω, defend. Wakefield, Timpanaro (1960) : E α-A : Te Shackle (1921) 156</note>
@@ -271,7 +337,9 @@
             <w lemma="extollo">extollere</w>
             <anchor xml:id="f1_lumen"/>
             <app type="critical">
-              <lem wit="#Gamma" source="#Lact"><w lemma="lumen">lumen</w></lem>
+              <lem wit="#Gamma" source="#Lact">
+                <term ref="#lumen"><w lemma="lumen">lumen</w></term>
+              </lem>
               <rdg wit="#O"><w lemma="flumen">flumen</w></rdg>
             </app>
           </l>
@@ -333,7 +401,7 @@
             <w lemma="enim">enim</w>
             <app type="critical">
               <lem wit="#O"><w lemma="contendo">contendat</w></lem>
-              <rdg wit="#Gamma">c o n t e n d a</rdg>
+              <rdg wit="#Gamma">contenda</rdg>
             </app>
             <w lemma="hirundo">hirundo</w>
           </l>
@@ -352,10 +420,13 @@
             <w lemma="aut">aut</w>
             <w lemma="quisnam">quidnam</w>
             <anchor xml:id="r7_start"/>
-            <w lemma="tremulus">tremulis</w>
-            <w lemma="facio">facere</w>
-            <w lemma="artus">artubus</w>
-            <w lemma="haedus">haedi</w>
+            <seg type="parallel" corresp="#iter-III7">
+              <w lemma="tremulus">tremulis</w>
+              <w lemma="facio">facere</w>
+              <w lemma="artus">artubus</w>
+              <w lemma="haedus">haedi</w>
+            </seg>
+            <anchor xml:id="r7_end"/>
           </l>
 
           <!-- III 8 -->
@@ -413,7 +484,7 @@
             <w lemma="saltus">saltibus</w>
             <w lemma="omnis">omnia</w>
             <app type="critical">
-              <lem resp="#Marullus" wit="#MarStar"><w lemma="libo">libant</w></lem>
+              <lem resp="#Marullus"><w lemma="libo">libant</w></lem>
               <rdg wit="#Omega"><w lemma="limo">limant</w></rdg>
               <note>libant Mar.* : limant Ω</note>
             </app>,
@@ -443,7 +514,7 @@
             <w lemma="nam">nam</w>
             <w lemma="simul">simul</w>
             <w lemma="ac">ac</w>
-            <w lemma="ratio" ana="#key-term">ratio</w>
+            <term ref="#ratio"><w lemma="ratio">ratio</w></term>
             <w lemma="tuus">tua</w>
             <w lemma="coepi">coepit</w>
             <w lemma="vocifero">uociferari</w>
@@ -466,10 +537,10 @@
           <!-- III 16 -->
           <l xml:id="III16" n="16">
             <w lemma="diffugio">diffugiunt</w>
-            <w lemma="animus" ana="#key-term">animi</w>
-            <w lemma="terror" ana="#key-term">terrores</w>,
-            <w lemma="moenia">moenia</w>
-            <w lemma="mundus">mundi</w>
+            <w lemma="animus">animi</w>
+            <w lemma="terror">terrores</w>,
+            <term ref="#moenia-mundi"><w lemma="moenia">moenia</w>
+            <w lemma="mundus">mundi</w></term>
           </l>
 
           <!-- III 17 -->
@@ -479,9 +550,9 @@
             <w lemma="totus">totum</w>
             <w lemma="video">uideo</w>
             <w lemma="per">per</w>
-            <w lemma="inanis">inane</w>
+            <term ref="#inane"><w lemma="inanis">inane</w></term>
             <w lemma="gero">geri</w>
-            <w lemma="res" ana="#key-term">res</w>.
+            <w lemma="res">res</w>.
             <anchor xml:id="f17_end"/>
           </l>
 
@@ -534,7 +605,7 @@
             <w lemma="et">et</w>
             <w lemma="large">large</w>
             <w lemma="diffundo">diffuso</w>
-            <w lemma="lumen">lumine</w>
+            <term ref="#lumen"><w lemma="lumen">lumine</w></term>
             <app type="critical">
               <lem wit="#Omega"><w lemma="rideo">ridet</w></lem>
               <rdg resp="#LACh" type="conjecture"><w lemma="rideo">rident</w></rdg>
@@ -543,7 +614,6 @@
           </l>
         </lg>
 
-        <!-- Apparati separati, collegati al testo tramite @target e @corresp. -->
         <div type="apparatus-fontium">
           <head>Apparatus fontium et versuum iteratorum (III 1–22)</head>
 
@@ -570,37 +640,41 @@
         <div type="versus-iterati">
           <head>Apparatus versuum iteratorum</head>
           <note type="iterati" xml:id="iter-III7"
-                target="#III7 #r7_start" corresp="#II367" subtype="similar">
-            <w lemma="tremulus">tremulis</w>: ~
-            <ref target="#II367">II 367</ref>.
+                target="#III7 #r7_start #r7_end" corresp="#II367" subtype="similar">
+            <seg type="parallel-phrase">tremulis facere artubus haedi</seg>
+            (<ref target="#III7">III.7</ref>) echoes a similar internal parallel at
+            <ref target="#II367">II.367</ref>
+            (<quote>tremulis cum uocibus haedi</quote>), where the image of newborn
+            goats is likewise characterized by trembling.
+            <seg type="short-reference">tremulis – ~ II.367</seg>
           </note>
         </div>
 
         <div type="translation" xml:lang="it">
-          <head>Traduzione di lavoro (III 1–22)</head>
+          <head>Translation by David R. Slavitt(III 1–93)</head>
           <lg type="translation">
-            <l n="1" corresp="#III1">O tu che per primo, tra tenebre così fitte, levasti una luce tanto chiara, illuminando i beni della vita,</l>
-            <l n="2" corresp="#III2">tu che per primo potesti illustrare i vantaggi dell’esistenza,</l>
-            <l n="3" corresp="#III3">te seguo, o gloria della gente greca, e ora nelle tue</l>
-            <l n="4" corresp="#III4">orme impresse poso con sicurezza i miei passi,</l>
-            <l n="5" corresp="#III5">non tanto per desiderio di contendere quanto per amore,</l>
-            <l n="6" corresp="#III6">perché desidero imitarti: quale rondine potrebbe infatti competere</l>
-            <l n="7" corresp="#III7">con i cigni, o quali capretti dalle membra tremanti</l>
-            <l n="8" corresp="#III8">potrebbero eguagliare nella corsa la forza di un forte cavallo?</l>
-            <l n="9" corresp="#III9">Tu, padre, sei lo scopritore della verità; tu a noi</l>
-            <l n="10" corresp="#III10">offri precetti paterni dai tuoi illustri scritti.</l>
-            <l n="11" corresp="#III11">Come le api nei pascoli fioriti raccolgono ogni nettare,</l>
-            <l n="12" corresp="#III12">così noi ci nutriamo delle tue auree parole,</l>
-            <l n="13" corresp="#III13">auree, sempre degnissime di vita perenne.</l>
-            <l n="14" corresp="#III14">Infatti, non appena la tua dottrina cominciò a proclamare</l>
-            <l n="15" corresp="#III15">la natura delle cose, sorta da una mente divina,</l>
-            <l n="16" corresp="#III16">i terrori dell’animo si dileguano, le mura del mondo</l>
-            <l n="17" corresp="#III17">si aprono: vedo compiersi gli eventi attraverso l’immenso vuoto.</l>
-            <l n="18" corresp="#III18">Appaiono la maestà degli dei e le loro dimore serene,</l>
-            <l n="19" corresp="#III19">che i venti non scuotono e le nubi non bagnano di piogge,</l>
-            <l n="20" corresp="#III20">né violenta la neve candida, rappresa dall’aspro gelo,</l>
-            <l n="21" corresp="#III21">cade a turbarle: un etere sempre senza nubi</l>
-            <l n="22" corresp="#III22">le avvolge e ride di una luce largamente diffusa.</l>
+            <l n="1" corresp="#III1">In the murk of our darkness, you, Epicurus, raised your blazing lantern</l>
+            <l n="2" corresp="#III2">to show us the blessings of life.</l>
+            <l n="3" corresp="#III3">And I follow you,</l>
+            <l n="4" corresp="#III4">walking with confident footsteps the trails that you have blazed,</l>
+            <l n="5" corresp="#III5">not to be your rival, but in admiration and love,</l>
+            <l n="6" corresp="#III6">and happy to have your example to guide me. How could I think of competing with you? A swallow might as well vie</l>
+            <l n="7" corresp="#III7">with swans, or a young kid on its wobbly legs presume to race</l>
+            <l n="8" corresp="#III8">alongside a strong horse.</l>
+            <l n="9" corresp="#III9">You are our father, our leader, our pioneer, discovering truths that you share with us.</l>
+            <l n="10" corresp="#III10">You are our guide, and from your writings,</l>
+            <l n="11" corresp="#III11">You are like one of those bees that goes out to find the flowers and then brings back word to the hive of where the sweet nectar is for them all.</l>
+            <l n="12" corresp="#III12">So do we feed on your words</l>
+            <l n="13" corresp="#III13">of perdurable gold that are worthy of everlasting life.</l>
+            <l n="14" corresp="#III14">We begin to follow your thoughts, your arguments, and your reasons,</l>
+            <l n="15" corresp="#III15">about the nature of things, sprung from a divine mind,</l>
+            <l n="16" corresp="#III16">and our mind’s terrors abate, while the opaque walls of the world</l>
+            <l n="17" corresp="#III17">open wide to exhibit the intricate actions and movements that go on all the time throughout the limitless void.</l>
+            <l n="18" corresp="#III18">Through you, I see the gods in their tranquil dwelling places,</l>
+            <l n="19" corresp="#III19">where no harsh winds ever blow, where no dark clouds approach with the threat of violent storms,</l>
+            <l n="20" corresp="#III20">and it never snows or freezes,</l>
+            <l n="21" corresp="#III21">but a gentle air surrounds them attendant on their pleasures,</l>
+            <l n="22" corresp="#III22">and smiles in an expanse of bounteous light.</l>
           </lg>
         </div>
 
@@ -623,5 +697,45 @@
         </div>
       </div>
     </body>
+    <back>
+    <div type="glossary" xml:id="proem-keywords">
+      <head>Index of Philosophical Keywords (lines 1–22)</head>
+      <p>Key concepts of Epicurean doctrine and Lucretian poetic imagery appearing in the proem to Book III.</p>
+
+      <entry xml:id="lumen">
+        <form><orth>lumen</orth></form>
+        <sense>
+          <def>Light of Epicurean truth and scientific enlightenment. It opens the proem (line 1) in stark contrast to the darkness of human ignorance, and concludes the Olympian vision of the gods (line 22) radiant in an expanse of bounteous brightness.</def>
+          <cit type="verse"><ref target="#III1">line 1</ref></cit>
+          <cit type="verse"><ref target="#III22">line 22</ref></cit>
+        </sense>
+      </entry>
+
+      <entry xml:id="ratio">
+        <form><orth>ratio</orth></form>
+        <sense>
+          <def>Rational explanation and philosophical system of Epicurus. It loudly proclaims (<foreign xml:lang="la">vociferari</foreign>) the physical nature of things, dispelling unfounded superstitious terrors through logical inquiry.</def>
+          <cit type="verse"><ref target="#III14">line 14</ref></cit>
+        </sense>
+      </entry>
+
+      <entry xml:id="inane">
+        <form><orth>inane</orth></form>
+        <sense>
+          <def>The void: one of the two foundational principles of Epicurean atomism alongside solid bodies. An intangible, infinite space through which matter moves, combines, and dissolves unceasingly.</def>
+          <cit type="verse"><ref target="#III17">line 17</ref></cit>
+        </sense>
+      </entry>
+
+      <entry xml:id="moenia-mundi">
+        <form><orth>moenia mundi</orth></form>
+        <sense>
+          <def>The walls of the world: the visible boundaries of the cosmic sphere. Upon the revelation of Epicurean physics, these restrictive ramparts withdraw and fall away, opening the mind to infinite space.</def>
+          <cit type="verse"><ref target="#III16">line 16</ref></cit>
+        </sense>
+      </entry>
+
+    </div>
+  </back>
   </text>
 </TEI>
