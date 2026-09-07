@@ -274,3 +274,43 @@ main { padding: 2rem 5vw; }
   .app-entry { grid-template-columns: 1.3rem 2.8rem 1fr; gap: .4rem; }
   .verse-text { font-size: 1.08rem; }
 }
+
+/* Pulsante di collegamento a keywords.html nella barra masthead */
+.nav-explore-btn {
+  display: inline-block;
+  margin: .2rem;
+  padding: .35rem .75rem;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: .2rem;
+  text-decoration: none;
+  font: inherit;
+  font-size: .95rem;
+  vertical-align: middle;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-explore-btn:hover {
+  background: var(--gold);
+  color: #312b25;
+}
+
+/* Stile base delle parole chiave nel testo (invisibile finché inattivo) */
+.keyword-term {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Evidenziazione attiva al clic sul pulsante Keywords */
+body.keywords-active .keyword-term {
+  background: rgba(223, 141, 47, 0.25);
+  border-bottom: 2px solid var(--amber);
+  border-radius: 2px;
+  padding: 0 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+body.keywords-active .keyword-term:hover {
+  background: rgba(223, 141, 47, 0.45);
+}

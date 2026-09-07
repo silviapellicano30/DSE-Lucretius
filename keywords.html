@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De rerum natura — Keywords</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    :root {
+      --text: #10131a;
+      --bg: #fdfbf6;
+      --accent: #697d8c;
+      --link: #2176a8;
+      --border: 1px solid #cfc9c0;
+      --muted: #6b6258;
+      --card-bg: #ffffff;
+      --general_font: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --h1_font: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--general_font);
+      font-size: 1.2em;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+    }
+    .page-intro { text-align: center; padding: 2.5rem 1rem 1.5rem; }
+    .page-intro h1 { margin: 0; font-size: 3.5rem; color: var(--accent); font-family: var(--h1_font); font-variant: small-caps; }
+    .subtitle { margin: 0.5rem auto 0; max-width: 700px; color: var(--muted); font-size: 1.2rem; font-style: italic; }
+    .section-title { margin: 2rem 0 1rem; color: var(--muted); font-size: 1.1rem; font-style: italic; }
+    .content { width: 100%; max-width: 1000px; margin: 0 auto; padding: 1rem 2vw 3rem; box-sizing: border-box; }
+    .cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; width: 100%; }
+    .info-card { background: var(--card-bg); border: var(--border); border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.05); overflow: hidden; }
+    .info-card summary { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.4rem; cursor: pointer; list-style: none; background: #f3ecdd; color: var(--accent); font-size: 1.25rem; font-weight: 600; font-style: italic; }
+    .info-card summary::-webkit-details-marker { display: none; }
+    .info-card summary::after { content: "＋"; font-size: 1.3rem; font-style: normal; }
+    .info-card[open] summary::after { content: "−"; }
+    .card-content { padding: 1.3rem 1.5rem; }
+    .card-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .meta-tag { display: inline-block; padding: 0.2rem 0.65rem; border-radius: 20px; background: #f3ecdd; color: var(--accent); font-size: 0.75rem; font-weight: 600; }
+    .cta-wrapper { display: flex; justify-content: center; gap: 1rem; padding: 0 1rem 2.5rem; }
+    .explore-btn-main { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); color: #fff; font-size: 1.05rem; font-weight: 600; padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 20px rgba(105, 125, 140, 0.35); transition: 0.2s ease; }
+    .explore-btn-main:hover { background: #5a6d7a; transform: translateY(-2px); }
+    footer { margin-top: auto; padding: 20px; text-align: center; border-top: var(--border); font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <section class="page-intro">
+    <h1 id="page-title">Philosophical Keywords</h1>
+    <p class="subtitle" id="page-subtitle"></p>
+  </section>
+
+  <main class="content" id="keywords-content"></main>
+
+  <div class="cta-wrapper">
+    <a href="edition.html" class="explore-btn-main">← Back to the Edition</a>
+  </div>
+
+  <footer>
+    <p>Project created for the course of Digital Scholarly Editing: Theory, Methods and Practice at Alma Mater Studiorum - Università di Bologna.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const contentContainer = document.getElementById("keywords-content");
+      const pageTitle = document.getElementById("page-title");
+      const pageSubtitle = document.getElementById("page-subtitle");
+
+      try {
+        const response = await fetch("data/keywords.json");
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+
+        pageTitle.textContent = data.page.title;
+        pageSubtitle.innerHTML = data.page.subtitle.replace("De rerum natura", "<i>De rerum natura</i>");
+
+        data.sections.forEach(section => {
+          const sectionTitle = document.createElement("h2");
+          sectionTitle.className = "section-title";
+          sectionTitle.textContent = section.title;
+
+          const cardsGrid = document.createElement("div");
+          cardsGrid.className = "cards-grid";
+
+          section.keywords.forEach(keyword => {
+            const card = document.createElement("details");
+            card.className = "info-card";
+            card.id = keyword.name.toLowerCase().replace(/\s+/g, "-");
+
+            const summary = document.createElement("summary");
+            summary.textContent = keyword.name;
+
+            const cardContent = document.createElement("div");
+            cardContent.className = "card-content";
+
+            if (keyword.tags && keyword.tags.length > 0) {
+              const meta = document.createElement("div");
+              meta.className = "card-meta";
+              keyword.tags.forEach(tag => {
+                const tagEl = document.createElement("span");
+                tagEl.className = "meta-tag";
+                tagEl.textContent = tag;
+                meta.appendChild(tagEl);
+              });
+              cardContent.appendChild(meta);
+            }
+
+            keyword.paragraphs.forEach(pText => {
+              const p = document.createElement("p");
+              p.innerHTML = pText;
+              cardContent.appendChild(p);
+            });
+
+            card.appendChild(summary);
+            card.appendChild(cardContent);
+            cardsGrid.appendChild(card);
+          });
+
+          contentContainer.appendChild(sectionTitle);
+          contentContainer.appendChild(cardsGrid);
+        });
+
+        if (window.location.hash) {
+          const targetCard = document.querySelector(window.location.hash);
+          if (targetCard) {
+            targetCard.open = true;
+            targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        }
+      } catch (err) {
+        contentContainer.innerHTML = "<p>Unable to load keywords data.</p>";
+      }
+    });
+  </script>
+</body>
+</html>

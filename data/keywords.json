@@ -1,0 +1,46 @@
+{
+  "page": {
+    "title": "Philosophical Keywords",
+    "subtitle": "Core Epicurean concepts and imagery in the proem of Book III of De rerum natura"
+  },
+  "sections": [
+    {
+      "title": "Doctrinal & Poetic Keywords (vv. 1–22)",
+      "keywords": [
+        {
+          "name": "lumen",
+          "tags": ["Physics", "Epistemology", "Poetic Metaphor"],
+          "paragraphs": [
+            "<strong>Occurrences:</strong> lines 1, 22.",
+            "The light of Epicurean truth and scientific clarity (<foreign>clarum extollere lumen</foreign>). Lucretius places this metaphor at the opening of Book III in direct opposition to human ignorance and terror (<foreign>tenebris tantis</foreign>).",
+            "The image returns in line 22 (<foreign>large diffuso lumine ridet</foreign>), where radiant light illuminates the tranquil dwellings of the gods (<foreign>sedesque quietae</foreign>)."
+          ]
+        },
+        {
+          "name": "ratio",
+          "tags": ["Philosophy", "Method", "Rationalism"],
+          "paragraphs": [
+            "<strong>Occurrences:</strong> line 14.",
+            "The rational system and natural philosophy established by Epicurus. Born of a godlike intellect (<foreign>divina mente coorta</foreign>), this doctrine proclaims the ultimate truths of physics, dispersing the irrational terrors of the soul."
+          ]
+        },
+        {
+          "name": "moenia mundi",
+          "tags": ["Cosmology", "Physics"],
+          "paragraphs": [
+            "<strong>Occurrences:</strong> line 16.",
+            "The ramparts or outer boundary walls of the visible universe. Upon the revelation of Epicurean doctrine, these cosmological boundaries give way (<foreign>discedunt</foreign>), allowing the philosopher's intellect to behold infinite cosmic space."
+          ]
+        },
+        {
+          "name": "inane",
+          "tags": ["Ontology", "Physics", "Atomism"],
+          "paragraphs": [
+            "<strong>Occurrences:</strong> line 17.",
+            "The infinite void: one of the two foundational constituents of Epicurean physics alongside material atoms (<foreign>corpora</foreign>). An intangible space devoid of resistance across which all atomic events and movements take place (<foreign>totum video per inane geri res</foreign>)."
+          ]
+        }
+      ]
+    }
+  ]
+}

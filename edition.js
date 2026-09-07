@@ -56,6 +56,11 @@ document.addEventListener("click", event => {
     button.setAttribute("aria-pressed", String(enabled));
   }
 
+  if (action === "keywords") {
+    const enabled = document.body.classList.toggle("keywords-active");
+    button.setAttribute("aria-pressed", String(enabled));
+  }
+
   if (action === "expand-apparatus") {
     const expanded = apparatus.classList.toggle("expanded");
     button.setAttribute("aria-expanded", String(expanded));

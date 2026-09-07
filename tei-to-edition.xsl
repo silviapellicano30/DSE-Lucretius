@@ -22,6 +22,8 @@
         <div class="tools">
           <button type="button" data-action="translation" aria-pressed="false">Translation</button>
           <button type="button" data-action="lemmas" aria-pressed="false">Lemmatization</button>
+          <button type="button" data-action="keywords" aria-pressed="false">Keywords</button>
+          <a href="keywords.html" class="nav-explore-btn">Explore the Keywords →</a>
         </div>
       </header>
       <main><div class="reading-desk">
@@ -133,6 +135,11 @@
     </article>
   </xsl:template>
   <xsl:template match="tei:note" mode="linked-note"><article class="linked-entry" id="{@xml:id}"><xsl:for-each select="tokenize(normalize-space(@target),'\s+')"><a href="{.}" data-target="{substring-after(.,'#')}"><xsl:value-of select="substring-after(.,'#')"/></a><xsl:text> </xsl:text></xsl:for-each><span><xsl:apply-templates/></span></article></xsl:template>
+  <xsl:template match="tei:term">
+    <a href="keywords.html#{substring-after(@ref, '#')}" class="keyword-term" data-term="{substring-after(@ref, '#')}">
+      <xsl:apply-templates/>
+    </a>
+  </xsl:template>
 </xsl:stylesheet>
 
 
