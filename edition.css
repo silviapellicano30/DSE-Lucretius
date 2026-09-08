@@ -8,6 +8,14 @@
   --ochre: #d8ad49;
   --forest: #72946d;
   --indigo: #8199d0;
+
+  /* Font coerenti con la pagina Keywords */
+  --general_font: "EB Garamond", Georgia, serif;
+  --h1_font: "Cinzel", Georgia, serif;
+
+  /* Colore del bottone "Back to Edition" della scorsa pagina */
+  --accent-btn: #5a3232;
+  --accent-btn-hover: #863838;
 }
 
 * { box-sizing: border-box; }
@@ -17,11 +25,13 @@ body {
   padding-bottom: 29vh;
   color: var(--ink);
   background: #292622;
-  font: 18px/1.75 Georgia, serif;
+  font-family: var(--general_font);
+  font-size: 19px;
+  line-height: 1.75;
 }
 
 .masthead {
-  padding: 2.2rem 5vw 1.5rem;
+  padding: 2.5rem 5vw 1.8rem;
   color: #f8edd2;
   background: #312b25;
   text-align: center;
@@ -29,27 +39,83 @@ body {
 
 .masthead h1 {
   margin: 0;
+  font-family: var(--h1_font);
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-variant: small-caps;
   letter-spacing: .06em;
 }
 
 .eyebrow, .subtitle { margin: .1rem; color: #d9c28b; }
-.eyebrow { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
-.tools { margin-top: 1.1rem; }
+.eyebrow { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; font-family: var(--h1_font); }
 
-.tools button {
-  margin: .2rem;
-  padding: .35rem .75rem;
-  color: inherit;
-  border: 1px solid #d9c28b;
-  border-radius: .2rem;
-  background: transparent;
-  font: inherit;
-  cursor: pointer;
+/* --- Barra degli strumenti su due file distinte --- */
+.tools-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
 }
 
-.tools button[aria-pressed="true"] { color: #312b25; background: #d9c28b; }
+/* Fila 1: Strumenti dell'edizione (Lemmatization, Translation, Keywords) */
+.tools-row-edition {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tools-row-edition button {
+  padding: .35rem .85rem;
+  color: #f8edd2;
+  border: 1px solid #d9c28b;
+  border-radius: 4px;
+  background: transparent;
+  font-family: var(--general_font);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tools-row-edition button:hover {
+  background: rgba(217, 194, 139, 0.15);
+}
+
+.tools-row-edition button[aria-pressed="true"] {
+  color: #312b25;
+  background: #d9c28b;
+}
+
+/* Fila 2: Pulsanti di navigazione esterna (stile identico al bottone "Back to Edition") */
+.tools-row-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.nav-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.25rem;
+  color: #fff;
+  background: var(--accent-btn);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px; /* Bordo squadrato ma smussato */
+  text-decoration: none;
+  font-family: var(--general_font);
+  font-size: 0.98rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link-btn:hover {
+  background: var(--accent-btn-hover);
+  transform: translateY(-2px);
+}
+
 main { padding: 2rem 5vw; }
 
 .reading-desk {
@@ -62,15 +128,31 @@ main { padding: 2rem 5vw; }
 
 .reading-desk:has(.translation:not([hidden])) { grid-template-columns: 1fr 1fr; }
 
+
+/* --- Pergamena antica, omogenea e naturale --- */
 .parchment {
-  padding: clamp(1.6rem, 5vw, 4.5rem);
-  background: linear-gradient(115deg, #fff4d833, transparent 45%), var(--paper);
-  border: 1px solid #d9c18d;
-  box-shadow: 0 8px 30px #0006;
+  position: relative;
+  padding: clamp(1.8rem, 5vw, 4.5rem);
+  background-color: #f7ecd5; /* Tonalità calda e neutra, non satura */
+  
+  /* Gradiente delicatissimo: schiarita centrale e lieve ossidazione sui bordi */
+  background-image: 
+    radial-gradient(ellipse at 50% 40%, #faf2e3 0%, rgba(247, 236, 213, 0.8) 65%, #ece0c6 100%),
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(140, 110, 70, 0.015) 3px, rgba(140, 110, 70, 0.015) 4px);
+  
+  border: 1px solid #d9cbaf;
+  border-radius: 6px;
+  
+  /* Lieve invecchiamento perimetrale morbido (box-shadow interno) */
+  box-shadow: 
+    inset 0 0 40px rgba(160, 130, 85, 0.14),
+    inset 0 0 100px rgba(185, 155, 110, 0.08),
+    0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
 .parchment h2 {
   margin: 0;
+  font-family: var(--h1_font);
   font-size: clamp(1.5rem, 3vw, 2.3rem);
   font-variant: small-caps;
   letter-spacing: .04em;
@@ -80,6 +162,7 @@ main { padding: 2rem 5vw; }
 .section-label {
   margin: .15rem 0 1.8rem;
   color: #80694c;
+  font-family: var(--h1_font);
   font-size: .85rem;
   font-variant: small-caps;
   letter-spacing: .12em;
@@ -100,7 +183,11 @@ main { padding: 2rem 5vw; }
   text-align: right;
 }
 
-.verse-text { font-size: 1.18rem; letter-spacing: .012em; }
+.verse-text { 
+  font-size: 1.18rem; 
+  letter-spacing: .012em; 
+}
+
 .word + .word:not([data-join="right"])::before,
 .app-reading + .word::before { content: " "; }
 .word + .app-reading { margin-left: .28em; }
@@ -127,8 +214,6 @@ main { padding: 2rem 5vw; }
 .parallel-locus { border-radius: .18rem; }
 .parallel-locus.parallel-active {
   color: #7b1724;
-  background: linear-gradient(transparent 58%, #8fae8875 58%);
-  box-shadow: 0 0 0 .1rem #8fae8838;
   background: linear-gradient(transparent 58%, #9b25385c 58%);
   box-shadow: 0 0 0 .1rem #9b253840;
 }
@@ -193,7 +278,6 @@ main { padding: 2rem 5vw; }
   outline-offset: -1px;
 }
 
-/* Numero di apparato: grassetto, senza cerchio. */
 .app-id {
   padding: 0 !important;
   color: var(--gold) !important;
@@ -209,11 +293,10 @@ main { padding: 2rem 5vw; }
   font-size: .92rem;
   white-space: nowrap;
 }
-.reading-form { margin-left: .18em; color: #fff4d6; }
+
 .reading-form { margin-left: .18em; color: #fff4d6; font-size: .96em; }
 .editorial-note { margin: .28rem 0 0; color: #c7b9a3; font-size: .9rem; }
 
-/* Gerarchia stemmatica e autori. */
 .stem { font-weight: 700; font-style: normal; }
 .archetype { color: #cc6974; }
 .primary { color: var(--amber); }
@@ -223,8 +306,6 @@ main { padding: 2rem 5vw; }
 
 .evidence-group {
   display: inline-block;
-  margin-right: .35rem;
-  padding: .13rem .46rem .15rem;
   margin-right: .38rem;
   padding: .17rem .56rem .19rem;
   color: #2a241f;
@@ -232,7 +313,6 @@ main { padding: 2rem 5vw; }
   border-radius: .12rem;
   background: #eee3c9;
   box-shadow: 0 0 0 1px #6a5a4c, 0 1px 3px #0008;
-  font: 700 .86rem/1.35 system-ui, sans-serif;
   font: 700 .94rem/1.35 system-ui, sans-serif;
   vertical-align: .06em;
 }
@@ -251,9 +331,7 @@ main { padding: 2rem 5vw; }
   font-size: .78rem;
 }
 
-.parallel-entry {
-  cursor: pointer;
-}
+.parallel-entry { cursor: pointer; }
 
 #lemma-popover {
   position: fixed;
@@ -266,42 +344,11 @@ main { padding: 2rem 5vw; }
   font-style: italic;
 }
 
-@media (max-width: 720px) {
-  body { font-size: 17px; }
-  .reading-desk:has(.translation:not([hidden])) { grid-template-columns: 1fr; }
-  .apparatus { height: 34vh; }
-  .apparatus-bar { padding-inline: .5rem; }
-  .app-entry { grid-template-columns: 1.3rem 2.8rem 1fr; gap: .4rem; }
-  .verse-text { font-size: 1.08rem; }
-}
-
-/* Pulsante di collegamento a keywords.html nella barra masthead */
-.nav-explore-btn {
-  display: inline-block;
-  margin: .2rem;
-  padding: .35rem .75rem;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-  border-radius: .2rem;
-  text-decoration: none;
-  font: inherit;
-  font-size: .95rem;
-  vertical-align: middle;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.nav-explore-btn:hover {
-  background: var(--gold);
-  color: #312b25;
-}
-
-/* Stile base delle parole chiave nel testo (invisibile finché inattivo) */
 .keyword-term {
   color: inherit;
   text-decoration: none;
 }
 
-/* Evidenziazione attiva al clic sul pulsante Keywords */
 body.keywords-active .keyword-term {
   background: rgba(223, 141, 47, 0.25);
   border-bottom: 2px solid var(--amber);
@@ -313,4 +360,13 @@ body.keywords-active .keyword-term {
 
 body.keywords-active .keyword-term:hover {
   background: rgba(223, 141, 47, 0.45);
+}
+
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  .reading-desk:has(.translation:not([hidden])) { grid-template-columns: 1fr; }
+  .apparatus { height: 34vh; }
+  .apparatus-bar { padding-inline: .5rem; }
+  .app-entry { grid-template-columns: 1.3rem 2.8rem 1fr; gap: .4rem; }
+  .verse-text { font-size: 1.08rem; }
 }

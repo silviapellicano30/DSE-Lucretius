@@ -12,6 +12,12 @@
       <meta charset="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <title><xsl:value-of select="tei:teiHeader//tei:title[@type='main'][1]"/></title>
+      
+      <!-- Import dei caratteri Cinzel ed EB Garamond -->
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+      <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+      
       <link rel="stylesheet" href="edition-v3.css"/>
       <script src="edition-v3.js" defer="defer"/>
     </head><body>
@@ -19,11 +25,20 @@
         <p class="eyebrow">Digital critical edition</p>
         <h1>De rerum natura</h1>
         <p class="subtitle">Titus Lucretius Carus</p>
-        <div class="tools">
-          <button type="button" data-action="translation" aria-pressed="false">Translation</button>
-          <button type="button" data-action="lemmas" aria-pressed="false">Lemmatization</button>
-          <button type="button" data-action="keywords" aria-pressed="false">Keywords</button>
-          <a href="keywords.html" class="nav-explore-btn">Explore the Keywords →</a>
+        
+        <div class="tools-container">
+          <!-- Fila 1: Azioni sul testo dell'edizione -->
+          <div class="tools-row-edition">
+            <button type="button" data-action="translation" aria-pressed="false">Translation</button>
+            <button type="button" data-action="lemmas" aria-pressed="false">Lemmatization</button>
+            <button type="button" data-action="keywords" aria-pressed="false">Keywords</button>
+          </div>
+          
+          <!-- Fila 2: Navigazione verso pagine esterne (stile rosso squadrato) -->
+          <div class="tools-row-navigation">
+            <a href="keywords.html" class="nav-link-btn">Explore the Keywords</a>
+            <a href="scholars.html" class="nav-link-btn">Meet the Scholars</a>
+          </div>
         </div>
       </header>
       <main><div class="reading-desk">
